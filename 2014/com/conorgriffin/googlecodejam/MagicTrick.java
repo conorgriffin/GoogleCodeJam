@@ -5,13 +5,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-// https://code.google.com/codejam/contest/2974486/dashboard#s=p0
-// Input files beginning with 'A'
+/**
+ * @see <a href="https://code.google.com/codejam/contest/2974486/dashboard#s=p0">https://code.google.com/codejam/contest/2974486/dashboard#s=p0</a>
+ * 
+ * @author Conor Griffin
+ * 
+ */
 
 public class MagicTrick extends GoogleCodeJam {
 	
+	// Input files beginning with 'A'
 	private static final String INPUT_FILE_NAME = "A-small-attempt.in";
-	private static final String COMPTETITION_YEAR = "2014";
+	private static final String COMPETITION_YEAR = "2014";
 	
 	public static void main(String[] args) {
 		MagicTrick magicNumbers = new MagicTrick();
@@ -24,6 +29,10 @@ public class MagicTrick extends GoogleCodeJam {
 		}
 	}
 
+	/**
+	 * Loop through each case in the input file and extract the rows for each player's
+	 * guess and calculate the result
+	 */
 	@Override
 	protected void processInput() throws IOException {
 		
@@ -45,6 +54,14 @@ public class MagicTrick extends GoogleCodeJam {
 		scanner.close();
 	}
 
+	/**
+	 * Skip through the input using the superclass Scanner object to fetch the
+	 * player's selected row.  Then skip the remainder of the rows for this turn
+	 * to move point the Scanner at the input line containing the next row selection
+	 * 
+	 * @return	A list containing the card numbers in the selected row of cards
+	 * @param	The player's selected row
+	 */
 	private List<Integer> fetchLine(int num) throws IOException {
 		List<Integer> row = new ArrayList<Integer>();
 		// skip to the line we want
@@ -62,6 +79,16 @@ public class MagicTrick extends GoogleCodeJam {
 		return row;
 	}
 	
+	/**
+	 * Check the number of possible results based on the player's selected rows
+	 * If there's only 1 possible result, then output the card number.  If there's
+	 * more than 1 possible result then output 'Bad magician!' as he obviously
+	 * screwed up!  If there's no possible results then output 'Volunteer cheated!'
+	 * since they lied about the card being in both rows.
+	 * 
+	 * @param firstRow	A List of Integers representing the first row of four cards
+	 * @param secondRow	A List of Integers representing the second row of four cards
+	 */
 	private String getResult(List<Integer> firstRow, List<Integer> secondRow) {
 		int count = 0;
 		int cardNumber = 0;
@@ -84,7 +111,7 @@ public class MagicTrick extends GoogleCodeJam {
 
 	@Override
 	protected String getInputFileName() {
-		return COMPTETITION_YEAR + File.separator + INPUT_FILE_NAME;
+		return COMPETITION_YEAR + File.separator + INPUT_FILE_NAME;
 	}
 	
 }

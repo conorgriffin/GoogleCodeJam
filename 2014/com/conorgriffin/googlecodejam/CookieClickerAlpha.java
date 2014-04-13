@@ -3,14 +3,18 @@ package com.conorgriffin.googlecodejam;
 import java.io.File;
 import java.io.IOException;
 import java.text.DecimalFormat;
-
-// https://code.google.com/codejam/contest/2974486/dashboard#s=p1
-// Input files beginning with 'B'
+/**
+ * @see <a href="https://code.google.com/codejam/contest/2974486/dashboard#s=p1">https://code.google.com/codejam/contest/2974486/dashboard#s=p1</a>
+ * 
+ * @author Conor Griffin
+ * 
+ */
 
 public class CookieClickerAlpha extends GoogleCodeJam {
 
+	// Input files beginning with 'B'
 	private static final String INPUT_FILE_NAME = "B-large-attempt.in";
-	private static final String COMPTETITION_YEAR = "2014";
+	private static final String COMPETITION_YEAR = "2014";
 	
 	public static void main(String[] args) {
 		CookieClickerAlpha cca = new CookieClickerAlpha();
@@ -23,6 +27,12 @@ public class CookieClickerAlpha extends GoogleCodeJam {
 		}
 	}
 	
+	/**
+	 * For each case, check whether it's faster to create 'X' cookies with the current
+	 * number of factories or with one more factory.  Based on which is faster, either
+	 * output the best time with current factories or add another one and iterate
+	 * through the calculation again.
+	 */
 	@Override
 	protected void processInput() throws IOException {
 		
@@ -56,7 +66,7 @@ public class CookieClickerAlpha extends GoogleCodeJam {
 
 	@Override
 	protected String getInputFileName() {
-		return COMPTETITION_YEAR + File.separator + INPUT_FILE_NAME;
+		return COMPETITION_YEAR + File.separator + INPUT_FILE_NAME;
 	}
 	
 }
