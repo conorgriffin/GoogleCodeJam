@@ -3,6 +3,7 @@ package com.conorgriffin.googlecodejam;
 import java.io.File;
 import java.io.IOException;
 import java.text.DecimalFormat;
+
 /**
  * @see <a href="https://code.google.com/codejam/contest/2974486/dashboard#s=p1">https://code.google.com/codejam/contest/2974486/dashboard#s=p1</a>
  * 
