@@ -5,12 +5,13 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 
 /**
+ * This class solves the Cookie Clicker Alpha problem from Google Code Jam 2014 (see link below)
+ * 
  * @see <a href="https://code.google.com/codejam/contest/2974486/dashboard#s=p1">https://code.google.com/codejam/contest/2974486/dashboard#s=p1</a>
  * 
  * @author Conor Griffin
  * 
  */
-
 public class CookieClickerAlpha extends GoogleCodeJam {
 
 	// Input files beginning with 'B'

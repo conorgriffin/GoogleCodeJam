@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * This class solves the Magic Trick problem from Google Code Jam 2014 (see link below)
+ * 
  * @see <a href="https://code.google.com/codejam/contest/2974486/dashboard#s=p0">https://code.google.com/codejam/contest/2974486/dashboard#s=p0</a>
  * 
  * @author Conor Griffin
