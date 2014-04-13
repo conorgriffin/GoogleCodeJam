@@ -11,8 +11,9 @@ import java.util.Scanner;
 
 /*
  * This abstract class handles the files for input/output for Google Code Jam problems
- * The subclasses will do the problem logic, this abstract class just removes the need
- * to put logic in each subclass to handle IO and formatting of the standard output.
+ * The subclasses will perform the problem-specific logic, this abstract class just 
+ * removes the need to put logic in each subclass to handle IO and formatting of the 
+ * standard output.
  */
 public abstract class GoogleCodeJam {
 	

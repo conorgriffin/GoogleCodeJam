@@ -16,7 +16,9 @@ public class MineSweeperMaster extends GoogleCodeJam {
 		try {
 			msm.run();
 		} catch (IOException ioe) {
+			System.out.println(ioe.getLocalizedMessage());
 			ioe.printStackTrace();
+			System.exit(1);
 		}
 	}
 

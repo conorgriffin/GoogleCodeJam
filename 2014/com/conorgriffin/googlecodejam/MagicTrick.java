@@ -18,7 +18,9 @@ public class MagicTrick extends GoogleCodeJam {
 		try {
 			magicNumbers.run();
 		} catch (IOException ioe) {
+			System.out.println(ioe.getLocalizedMessage());
 			ioe.printStackTrace();
+			System.exit(1);
 		}
 	}
 
