@@ -52,6 +52,11 @@ public class CookieClickerAlpha extends GoogleCodeJam {
 			double bestTimeWithAdditionalFactory = c/currentProductionRate + x/(currentProductionRate + f);
 			
 			while(bestTimeWithExistingFactories > bestTimeWithAdditionalFactory) {
+				// If it's slower to make 'X' cookies with the current factories then we must
+				// add another factory, increasing the currentProductionRate accordingly and
+				// adding the time to create this factory to the totalTime required then
+				// recalculate the bestTimeWithExistingFactories and bestTimeWithAdditionalFactory
+				// variables in order to compare which is faster for the next iteration of the loop
 				totalTime += c/currentProductionRate;
 				currentProductionRate += f;
 				bestTimeWithExistingFactories = x/currentProductionRate;
