@@ -9,7 +9,7 @@ import java.text.DecimalFormat;
 
 public class CookieClickerAlpha extends GoogleCodeJam {
 
-	private static final String INPUT_FILE_NAME = "B-large-attempt.n";
+	private static final String INPUT_FILE_NAME = "B-large-attempt.in";
 	private static final String COMPTETITION_YEAR = "2014";
 	
 	public static void main(String[] args) {
