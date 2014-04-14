@@ -44,29 +44,24 @@ public abstract class GoogleCodeJam {
 		reader = null;
 		writer = null;
 		String file = getInputFileName();
+		
 		try {
 			reader = new BufferedReader(new FileReader("inputs" + File.separator + file));
 			scanner = new Scanner(reader);
 			String[] tokens = file.split("\\.(?=[^\\.]+$)");
 			writer = new PrintWriter("outputs" + File.separator + tokens[0] + ".out", "UTF-8");
+			processInput();
+			writer.close();
 		} catch (FileNotFoundException fnfe) {
 			System.out.println("The file \"" + file + "\" does not exist");
 			fnfe.printStackTrace();
 		} catch (UnsupportedEncodingException e) {
 			System.out.println("Unsupported encoding specified: UTF-8");
 			e.printStackTrace();
-		}
-
-		processInput();
+		} finally {
+			if(reader != null) reader.close();
+		} 
 		
-		writer.close();
-		try {
-			reader.close();
-		} catch (IOException e) {
-			System.out.println("An IO Exception occurred");
-			e.printStackTrace();
-		}
-
 	}
 	
 	/**
