@@ -90,6 +90,8 @@ public class MagicTrick extends GoogleCodeJam {
 	 * 
 	 * @param firstRow	A List of Integers representing the first row of four cards
 	 * @param secondRow	A List of Integers representing the second row of four cards
+	 * @return String A string containing the result for this case.  This will be one
+	 * of "Bad magician!", "Volunteer cheated!" or the number of the card chosen.
 	 */
 	private String getResult(List<Integer> firstRow, List<Integer> secondRow) {
 		int count = 0;
