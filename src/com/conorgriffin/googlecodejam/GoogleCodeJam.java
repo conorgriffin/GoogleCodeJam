@@ -23,24 +23,29 @@ public abstract class GoogleCodeJam {
 	private BufferedReader reader;
 	private PrintWriter writer;
 	protected Scanner scanner;
-
+	protected String INPUT_FILE_NAME;
+	protected String COMPETITION_YEAR;
+	protected String ROUND_NAME;
+	
 	/**
 	 * Returns the name of the input file specified by the constant INPUT_FILE_NAME in
 	 * the subclass
 	 * 
 	 * @return The name of the input file
 	 */
-	protected abstract String getInputFileName();
+	protected String getInputFileName() {
+		return COMPETITION_YEAR + File.separator + ROUND_NAME + File.separator + INPUT_FILE_NAME;
+	}
 	
 	/**
 	 * Subclasses will override this to perform problem-specific logic.
 	 */
-	protected abstract void processInput() throws IOException;
+	protected abstract String solve() throws IOException;
 	
 	/**
 	 * Fetch the input files and generate and write to the output files specified by the subclass
 	 */
-	protected void run() throws IOException {
+	protected void run() {
 		reader = null;
 		writer = null;
 		String file = getInputFileName();
@@ -48,19 +53,27 @@ public abstract class GoogleCodeJam {
 		try {
 			reader = new BufferedReader(new FileReader("inputs" + File.separator + file));
 			scanner = new Scanner(reader);
-			String[] tokens = file.split("\\.(?=[^\\.]+$)");
-			writer = new PrintWriter("outputs" + File.separator + tokens[0] + ".out", "UTF-8");
-			processInput();
+			String[] tokens = file.split("\\.(?=[^\\.]+.txt$)");
+			writer = new PrintWriter("outputs" + File.separator + tokens[0] + ".out.txt", "UTF-8");
+			
+			// run the solve() method in the subclass for each case
+			int caseCount = scanner.nextInt();
+			for(int i = 1; i <= caseCount; i++) {
+				printResults(i, solve());
+			}
+			scanner.close();
 			writer.close();
+			if(reader != null) reader.close();
 		} catch (FileNotFoundException fnfe) {
 			System.out.println("The file \"" + file + "\" does not exist");
 			fnfe.printStackTrace();
 		} catch (UnsupportedEncodingException e) {
 			System.out.println("Unsupported encoding specified: UTF-8");
 			e.printStackTrace();
-		} finally {
-			if(reader != null) reader.close();
-		} 
+		} catch (IOException ioe) {
+			System.out.println(ioe.getLocalizedMessage());
+			ioe.printStackTrace();
+		}
 		
 	}
 	
@@ -72,8 +85,8 @@ public abstract class GoogleCodeJam {
 	 * @param result	The result for test case n
 	 */
 	protected void printResults(int n, String result) {
-		System.out.println("Case #" + (n+1) + ": " + result);
-		writer.println("Case #" + (n+1) + ": " + result);
+		System.out.println("Case #" + n + ": " + result);
+		writer.println("Case #" + n + ": " + result);
 	}
 
 }

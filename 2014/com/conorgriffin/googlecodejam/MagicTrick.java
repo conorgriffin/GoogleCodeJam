@@ -1,6 +1,5 @@
 package com.conorgriffin.googlecodejam;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,19 +17,16 @@ import java.util.List;
 
 public class MagicTrick extends GoogleCodeJam {
 	
-	// Input files beginning with 'A'
-	private static final String INPUT_FILE_NAME = "A-small-attempt.in";
-	private static final String COMPETITION_YEAR = "2014";
+	public MagicTrick() {
+		// Input files beginning with 'A'
+		this.INPUT_FILE_NAME = "A-small-attempt.in";
+		this.COMPETITION_YEAR = "2014";
+		this.ROUND_NAME = "Qualification";
+	}
 	
 	public static void main(String[] args) {
-		MagicTrick magicNumbers = new MagicTrick();
-		try {
-			magicNumbers.run();
-		} catch (IOException ioe) {
-			System.out.println(ioe.getLocalizedMessage());
-			ioe.printStackTrace();
-			System.exit(1);
-		}
+		GoogleCodeJam gcj = new MagicTrick();
+		gcj.run();
 	}
 
 	/**
@@ -38,24 +34,20 @@ public class MagicTrick extends GoogleCodeJam {
 	 * guess and calculate the result
 	 */
 	@Override
-	protected void processInput() throws IOException {
+	protected String solve() throws IOException {
 		
-		int caseCount = scanner.nextInt();
 		String result = null;
 		
-		for(int i = 0; i < caseCount; i++) {
-			int firstGuess = scanner.nextInt();
-			List<Integer> firstRow = fetchLine(firstGuess);
-			
-			int secondGuess = scanner.nextInt();
-			List<Integer> secondRow = fetchLine(secondGuess);
-			
-			result = getResult(firstRow, secondRow);
-			
-			printResults(i, result);
-		}
+		int firstGuess = scanner.nextInt();
+		List<Integer> firstRow = fetchLine(firstGuess);
 		
-		scanner.close();
+		int secondGuess = scanner.nextInt();
+		List<Integer> secondRow = fetchLine(secondGuess);
+		
+		result = getResult(firstRow, secondRow);
+		
+		return(result);
+		
 	}
 
 	/**
@@ -113,11 +105,6 @@ public class MagicTrick extends GoogleCodeJam {
 			return "Volunteer cheated!";
 		}
 		
-	}
-
-	@Override
-	protected String getInputFileName() {
-		return COMPETITION_YEAR + File.separator + INPUT_FILE_NAME;
 	}
 	
 }
