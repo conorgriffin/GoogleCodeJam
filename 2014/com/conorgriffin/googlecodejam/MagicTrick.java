@@ -1,6 +1,5 @@
 package com.conorgriffin.googlecodejam;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +33,7 @@ public class MagicTrick extends GoogleCodeJam {
 	 * guess and calculate the result
 	 */
 	@Override
-	protected String solve() throws IOException {
+	protected String solve() {
 		
 		String result = null;
 		
@@ -58,7 +57,7 @@ public class MagicTrick extends GoogleCodeJam {
 	 * @return	A list containing the card numbers in the selected row of cards
 	 * @param	The player's selected row
 	 */
-	private List<Integer> fetchLine(int num) throws IOException {
+	private List<Integer> fetchLine(int num) {
 		List<Integer> row = new ArrayList<Integer>();
 		// skip to the line we want
 		for (int i = 0; i < num; i++) {

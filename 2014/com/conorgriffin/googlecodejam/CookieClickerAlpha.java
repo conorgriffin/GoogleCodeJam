@@ -1,6 +1,5 @@
 package com.conorgriffin.googlecodejam;
 
-import java.io.IOException;
 import java.text.DecimalFormat;
 
 /**
@@ -34,7 +33,7 @@ public class CookieClickerAlpha extends GoogleCodeJam {
 	 * through the calculation again.
 	 */
 	@Override
-	protected String solve() throws IOException {
+	protected String solve() {
 	
 		DecimalFormat df = new DecimalFormat("#.#######");
 
