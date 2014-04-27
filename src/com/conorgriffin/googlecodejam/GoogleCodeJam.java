@@ -40,7 +40,7 @@ public abstract class GoogleCodeJam {
 	/**
 	 * Subclasses will override this to perform problem-specific logic.
 	 */
-	protected abstract String solve() throws IOException;
+	protected abstract String solve();
 	
 	/**
 	 * Fetch the input files and generate and write to the output files specified by the subclass
