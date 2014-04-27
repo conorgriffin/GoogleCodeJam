@@ -16,7 +16,7 @@ public class CookieClickerAlpha extends GoogleCodeJam {
 	
 	public CookieClickerAlpha() {
 		// Input files beginning with 'B'
-		this.INPUT_FILE_NAME = "B-large-attempt.in";
+		this.INPUT_FILE_NAME = "B-small-attempt.in.txt";
 		this.COMPETITION_YEAR = "2014";
 		this.ROUND_NAME = "Qualification";
 	}

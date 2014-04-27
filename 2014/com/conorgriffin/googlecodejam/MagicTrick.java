@@ -18,7 +18,7 @@ public class MagicTrick extends GoogleCodeJam {
 	
 	public MagicTrick() {
 		// Input files beginning with 'A'
-		this.INPUT_FILE_NAME = "A-small-attempt.in";
+		this.INPUT_FILE_NAME = "A-small-attempt.in.txt";
 		this.COMPETITION_YEAR = "2014";
 		this.ROUND_NAME = "Qualification";
 	}
