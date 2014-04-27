@@ -1,7 +1,5 @@
 package com.conorgriffin.googlecodejam;
 
-import java.io.IOException;
-
 /**
  * @see <a href="https://code.google.com/codejam/contest/2974486/dashboard#s=p2">
  * https://code.google.com/codejam/contest/2974486/dashboard#s=p2
@@ -26,7 +24,7 @@ public class MineSweeperMaster extends GoogleCodeJam {
 	}
 
 	@Override
-	protected String solve() throws IOException {
+	protected String solve() {
 		// TODO Auto-generated method stub
 		return null;
 	}
