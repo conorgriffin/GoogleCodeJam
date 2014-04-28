@@ -10,23 +10,23 @@ package com.conorgriffin.googlecodejam;
  */
 
 public class MineSweeperMaster extends GoogleCodeJam {
-  
-  public MineSweeperMaster() {
-    // Input files beginning with 'C'
-    this.INPUT_FILE_NAME = "C-small-practice.in.txt";
-    this.COMPETITION_YEAR = "2014";
-    this.ROUND_NAME = "Qualification";
-  }
+    
+    public MineSweeperMaster() {
+        // Input files beginning with 'C'
+        this.INPUT_FILE_NAME = "C-small-practice.in.txt";
+        this.COMPETITION_YEAR = "2014";
+        this.ROUND_NAME = "Qualification";
+    }
 
-  public static void main(String[] args) {
-    GoogleCodeJam gcj = new MineSweeperMaster();
-    gcj.run();
-  }
+    public static void main(String[] args) {
+        GoogleCodeJam gcj = new MineSweeperMaster();
+        gcj.run();
+    }
 
-  @Override
-  protected String solve() {
-    // TODO Auto-generated method stub
-    return null;
-  }
-  
+    @Override
+    protected String solve() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+    
 }
