@@ -29,8 +29,13 @@ public class MagicTrick extends GoogleCodeJam {
     }
 
     /**
-     * Loop through each case in the input file and extract the rows for each player's
-     * guess and calculate the result
+     * Check the number of possible results based on the player's selected rows.
+     * If there's only 1 possible result, then output the card number.  If there's
+     * more than 1 possible result then output 'Bad magician!' as he obviously
+     * screwed up!  If there's no possible results then output 'Volunteer cheated!'
+     * since they lied about the card being in both rows.
+     * 
+     * @return String   A string containing the result for this case
      */
     @Override
     protected String solve() {     
@@ -39,8 +44,24 @@ public class MagicTrick extends GoogleCodeJam {
         
         int secondGuess = scanner.nextInt();
         List<Integer> secondRow = fetchLine(secondGuess);
-                
-        return(getResult(firstRow, secondRow));
+        
+        int count = 0;
+        int cardNumber = 0;
+        
+        for(Integer card: firstRow) {
+            if(secondRow.contains(card.intValue())) {
+                cardNumber = card.intValue();
+                count++;
+            }
+        }
+        
+        if (count > 1) {
+            return "Bad magician!";
+        } else if (count == 1) {
+            return String.valueOf(cardNumber);
+        } else {
+            return "Volunteer cheated!";
+        }
     }
 
     /**
@@ -66,37 +87,6 @@ public class MagicTrick extends GoogleCodeJam {
             scanner.nextLine();
         }
         return row;
-    }
-    
-    /**
-     * Check the number of possible results based on the player's selected rows
-     * If there's only 1 possible result, then output the card number.  If there's
-     * more than 1 possible result then output 'Bad magician!' as he obviously
-     * screwed up!  If there's no possible results then output 'Volunteer cheated!'
-     * since they lied about the card being in both rows.
-     * 
-     * @param firstRow  A List of Integers representing the first row of four cards
-     * @param secondRow A List of Integers representing the second row of four cards
-     * @return String   A string containing the result for this case
-     */
-    private String getResult(List<Integer> firstRow, List<Integer> secondRow) {
-        int count = 0;
-        int cardNumber = 0;
-        
-        for(Integer card: firstRow) {
-            if(secondRow.contains(card.intValue())) {
-                cardNumber = card.intValue();
-                count++;
-            }
-        }
-        if (count > 1) {
-            return "Bad magician!";
-        } else if (count == 1) {
-            return String.valueOf(cardNumber);
-        } else {
-            return "Volunteer cheated!";
-        }
-        
     }
     
 }
