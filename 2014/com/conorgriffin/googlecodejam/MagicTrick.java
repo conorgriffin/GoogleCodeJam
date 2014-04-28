@@ -23,11 +23,6 @@ public class MagicTrick extends GoogleCodeJam {
         this.ROUND_NAME = "Qualification";
     }
     
-    public static void main(String[] args) {
-        GoogleCodeJam gcj = new MagicTrick();
-        gcj.run();
-    }
-
     /**
      * Check the number of possible results based on the player's selected rows.
      * If there's only 1 possible result, then output the card number.  If there's
@@ -89,4 +84,9 @@ public class MagicTrick extends GoogleCodeJam {
         return row;
     }
     
+    public static void main(String[] args) {
+        GoogleCodeJam gcj = new MagicTrick();
+        gcj.run();
+    }
+
 }

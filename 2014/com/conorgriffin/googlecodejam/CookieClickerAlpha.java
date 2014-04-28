@@ -21,11 +21,6 @@ public class CookieClickerAlpha extends GoogleCodeJam {
         this.ROUND_NAME = "Qualification";
     }
     
-    public static void main(String[] args) {
-        GoogleCodeJam gcj = new CookieClickerAlpha();
-        gcj.run();
-    }
-    
     /**
      * For each case, check whether it's faster to create 'X' cookies with the current
      * number of factories or with one more factory.  Based on which is faster, either
@@ -63,4 +58,9 @@ public class CookieClickerAlpha extends GoogleCodeJam {
         return(df.format(totalTime)); 
     }
 
+    public static void main(String[] args) {
+        GoogleCodeJam gcj = new CookieClickerAlpha();
+        gcj.run();
+    }
+    
 }
