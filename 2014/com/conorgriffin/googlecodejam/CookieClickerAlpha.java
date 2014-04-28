@@ -28,7 +28,7 @@ public class CookieClickerAlpha extends GoogleCodeJam {
     
     /**
      * For each case, check whether it's faster to create 'X' cookies with the current
-     * number of factories or with one more factory.    Based on which is faster, either
+     * number of factories or with one more factory.  Based on which is faster, either
      * output the best time with current factories or add another one and iterate
      * through the calculation again.
      */
