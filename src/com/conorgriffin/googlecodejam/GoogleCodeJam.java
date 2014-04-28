@@ -63,16 +63,27 @@ public abstract class GoogleCodeJam {
 			}
 			scanner.close();
 			writer.close();
-			if(reader != null) reader.close();
 		} catch (FileNotFoundException fnfe) {
 			System.out.println("The file \"" + file + "\" does not exist");
 			fnfe.printStackTrace();
+			System.exit(1);
 		} catch (UnsupportedEncodingException e) {
 			System.out.println("Unsupported encoding specified: UTF-8");
 			e.printStackTrace();
-		} catch (IOException ioe) {
-			System.out.println(ioe.getLocalizedMessage());
-			ioe.printStackTrace();
+			System.exit(1);
+		} catch (SecurityException se){
+			System.out.println("Security Exception:" + se.getLocalizedMessage());
+			se.printStackTrace();
+			System.exit(1);
+		} finally {
+			if(reader != null)
+				try {
+					reader.close();
+				} catch (IOException e) {
+					System.out.println("Close of BufferedReader failed with IOException:" + e.getLocalizedMessage());
+					e.printStackTrace();
+					System.exit(1);
+				}
 		}
 		
 	}
