@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.file.Path;
 import java.util.Scanner;
 
 /**
@@ -19,21 +18,10 @@ import java.util.Scanner;
 public abstract class GoogleCodeJam {
     
     protected Scanner scanner;
-    protected String INPUT_FILE_NAME;
-    protected String COMPETITION_YEAR;
-    protected String ROUND_NAME;
-    protected Path file;
-    private String fileEncoding = "UTF-8";
-    
-    /**
-     * Returns the name of the input file specified by the constant INPUT_FILE_NAME in
-     * the subclass
-     * 
-     * @return The name of the input file
-     */
-    protected String getInputFileName() {
-        return COMPETITION_YEAR + File.separator + ROUND_NAME + File.separator + INPUT_FILE_NAME;
-    }
+    protected String inputFileName;
+    protected String competitionYear;
+    protected String roundName;
+    private static final String FILE_ENCODING = "UTF-8";
     
     /**
      * Subclasses will override this to perform problem-specific logic.
@@ -44,18 +32,20 @@ public abstract class GoogleCodeJam {
      * Fetch the input files and generate and write to the output files specified by the subclass
      */
     protected void run() {
-        String file = getInputFileName();
+        String file = competitionYear + File.separator + roundName + File.separator + inputFileName;
         String[] tokens = file.split("\\.(?=[^\\.]+.txt$)");
         
         try (
             BufferedReader reader = new BufferedReader(new FileReader("inputs" + File.separator + file));
-            PrintWriter writer = new PrintWriter("outputs" + File.separator + tokens[0] + ".out.txt", fileEncoding);
+            PrintWriter writer = new PrintWriter("outputs" + File.separator + tokens[0] + ".out.txt", FILE_ENCODING);
         ) {
             scanner = new Scanner(reader);
             // run the solve() method in the subclass for each case
             int caseCount = scanner.nextInt();
             for(int i = 1; i <= caseCount; i++) {
-                printResults(i, solve(), writer);
+                String solution = solve();
+                writer.println("Case #" + i + ": " + solution);
+                System.out.println("Case #" + i + ": " + solution);
             }
         } catch (IOException ioe) {
             ioe.printStackTrace();
@@ -63,17 +53,4 @@ public abstract class GoogleCodeJam {
             System.exit(1);
         }
     }
-    
-    /**
-     * Print the result for each test case to the console and also to the output file
-     * specified by the subclass.
-     * 
-     * @param n         The test case number
-     * @param result    The result for test case n
-     */
-    protected void printResults(int n, String result, PrintWriter writer) {
-        System.out.println("Case #" + n + ": " + result);
-        writer.println("Case #" + n + ": " + result);
-    }
-
 }
