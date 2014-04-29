@@ -4,9 +4,9 @@ public class R1AQ3 extends GoogleCodeJam {
 
     public R1AQ3() {
         // Input files beginning with 'B'
-        this.INPUT_FILE_NAME = "C-large-attempt.in";
-        this.COMPETITION_YEAR = "2014";
-        this.ROUND_NAME = "1A";
+        this.inputFileName = "C-large-attempt.in";
+        this.competitionYear = "2014";
+        this.roundName = "1A";
     }
 
     public static void main(String[] args) {

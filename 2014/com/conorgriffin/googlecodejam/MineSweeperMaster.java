@@ -13,9 +13,9 @@ public class MineSweeperMaster extends GoogleCodeJam {
     
     public MineSweeperMaster() {
         // Input files beginning with 'C'
-        this.INPUT_FILE_NAME = "C-small-practice.in.txt";
-        this.COMPETITION_YEAR = "2014";
-        this.ROUND_NAME = "Qualification";
+        this.inputFileName = "C-small-practice.in.txt";
+        this.competitionYear = "2014";
+        this.roundName = "Qualification";
     }
 
     public static void main(String[] args) {

@@ -16,9 +16,9 @@ public class CookieClickerAlpha extends GoogleCodeJam {
     
     public CookieClickerAlpha() {
         // Input files beginning with 'B'
-        this.INPUT_FILE_NAME = "B-small-attempt.in.txt";
-        this.COMPETITION_YEAR = "2014";
-        this.ROUND_NAME = "Qualification";
+        this.inputFileName = "B-small-attempt.in.txt";
+        this.competitionYear = "2014";
+        this.roundName = "Qualification";
     }
     
     /**
@@ -26,6 +26,11 @@ public class CookieClickerAlpha extends GoogleCodeJam {
      * number of factories or with one more factory.  Based on which is faster, either
      * output the best time with current factories or add another one and iterate
      * through the calculation again.
+     * 
+     * For each case:
+     *      c = cost of a new factory in cookies
+     *      f = increase in production rate for each additional factory
+     *      x = number of cookies you need to produce
      */
     @Override
     protected String solve() {
