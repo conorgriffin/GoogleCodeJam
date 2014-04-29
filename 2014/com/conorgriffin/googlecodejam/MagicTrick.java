@@ -13,7 +13,6 @@ import java.util.List;
  * @author Conor Griffin
  * 
  */
-
 public class MagicTrick extends GoogleCodeJam {
     
     public MagicTrick() {
