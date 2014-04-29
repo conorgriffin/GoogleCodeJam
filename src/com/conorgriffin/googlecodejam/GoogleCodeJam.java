@@ -23,6 +23,7 @@ public abstract class GoogleCodeJam {
     protected String COMPETITION_YEAR;
     protected String ROUND_NAME;
     protected Path file;
+    private String fileEncoding = "UTF-8";
     
     /**
      * Returns the name of the input file specified by the constant INPUT_FILE_NAME in
@@ -48,7 +49,7 @@ public abstract class GoogleCodeJam {
         
         try (
             BufferedReader reader = new BufferedReader(new FileReader("inputs" + File.separator + file));
-            PrintWriter writer = new PrintWriter("outputs" + File.separator + tokens[0] + ".out.txt", "UTF-8");
+            PrintWriter writer = new PrintWriter("outputs" + File.separator + tokens[0] + ".out.txt", fileEncoding);
         ) {
             scanner = new Scanner(reader);
             // run the solve() method in the subclass for each case
