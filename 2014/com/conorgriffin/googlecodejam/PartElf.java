@@ -69,7 +69,7 @@ public class PartElf extends GoogleCodeJam {
      * A basic method to calculate the greatest common divisor of two longs p and q
      * @param p the dividend
      * @param q the divisor
-     * @return
+     * @return the greatest common divisor of p and q
      */
     private long gcd(long p, long q) {
         // base case
