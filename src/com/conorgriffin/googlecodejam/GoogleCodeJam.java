@@ -41,8 +41,7 @@ public abstract class GoogleCodeJam {
         ) {
             scanner = new Scanner(reader);
             // run the solve() method in the subclass for each case
-            String firstLine = scanner.nextLine();
-            int caseCount = Integer.parseInt(firstLine);
+            int caseCount = Integer.parseInt(scanner.nextLine());
             for(int i = 1; i <= caseCount; i++) {
                 String solution = solve();
                 writer.println("Case #" + i + ": " + solution);
